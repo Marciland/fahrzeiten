@@ -12,7 +12,7 @@ def main():
     @api.get('/update', status_code=status.HTTP_200_OK)
     def update():
         with Session(connection) as session:
-            update_database(session)
+            return update_database(session)
 
     @api.post('/filter', status_code=status.HTTP_200_OK)
     def get_points_by_filter(vehicle: FrontendVehicle = None,
